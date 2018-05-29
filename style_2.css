@@ -1,0 +1,23 @@
+html{
+  font-family:	Microsoft YaHei;
+}
+div.header{
+  background-color:#0099CC;
+  color:white;
+  text-align:center;
+  width:20%;
+  height:780px;
+  float:left;
+}
+.body{
+  width:70%;
+  float:left;
+  margin-left:20px
+}
+table{
+  width:600px;
+  font-size:17px;
+}
+p{
+  line-height:24px;
+}
