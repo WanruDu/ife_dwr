@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="first-number" placeholder="第一个数字">
+    <input id="second-number" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        // var firstnum = Number(document.getElementById("first-number").value) ;
+        // var secondnum = Number(document.getElementById("second-number").value) ;
+
+        document.getElementById("add-btn").onclick = numadd;
+        function numadd(){
+            if (isNaN(document.getElementById("first-number").value) || isNaN(document.getElementById("second-number").value))
+            {
+                alert("格式错误！");
+            }
+            else{
+                var firstnum = Number(document.getElementById("first-number").value) ;
+                var secondnum = Number(document.getElementById("second-number").value) ;
+                var resultnum = firstnum + secondnum;
+                document.getElementById("result").innerHTML = resultnum;
+            }
+            
+        }
+
+        document.getElementById("minus-btn").onclick = numminus;
+        function numminus(){
+            if (isNaN(document.getElementById("first-number").value) || isNaN(document.getElementById("second-number").value))
+            {
+                alert("格式错误！");
+            }
+            else{
+                var firstnum = Number(document.getElementById("first-number").value) ;
+                var secondnum = Number(document.getElementById("second-number").value) ;
+                var resultnum = firstnum - secondnum;
+                document.getElementById("result").innerHTML = resultnum;
+            }
+            
+        }
+
+        document.getElementById("times-btn").onclick = numtimes;
+        function numtimes(){
+            if (isNaN(document.getElementById("first-number").value) || isNaN(document.getElementById("second-number").value))
+            {
+                alert("格式错误！");
+            }
+            else{
+                var firstnum = Number(document.getElementById("first-number").value) ;
+                var secondnum = Number(document.getElementById("second-number").value) ;
+                var resultnum = firstnum * secondnum;
+                document.getElementById("result").innerHTML = resultnum;
+            }
+            
+        }
+
+        document.getElementById("divide-btn").onclick = numdivide;
+        function numdivide(){
+            if (isNaN(document.getElementById("first-number").value) || isNaN(document.getElementById("second-number").value))
+            {
+                alert("格式错误！");
+            }
+            else if(document.getElementById("second-number").value == 0) {
+                alert("除数不能为零！！！"); 
+            }
+            else{
+                var firstnum = Number(document.getElementById("first-number").value) ;
+                var secondnum = Number(document.getElementById("second-number").value) ;
+                var resultnum = firstnum / secondnum;
+                document.getElementById("result").innerHTML = resultnum;
+            }
+            
+        }
+    </script>
+</body>
+</html>
