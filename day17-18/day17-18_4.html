@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>
+    <p>输出从1到100，当数字为3的倍数或者含有3的时候，输出“PA” :</p>
+    <p id="result"></p>
+<script>
+    var result=""
+    for(i=1; i<=100; i++)
+    {
+        if( i%3 != 0 ){
+            result = result + i + ",";
+        }
+        else{
+            result = result + "PA" + ",";
+        }
+    }
+    document.getElementById("result").innerHTML = result;
+</script>
+</body>
+</html>
