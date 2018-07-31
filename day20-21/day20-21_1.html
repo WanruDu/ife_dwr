@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <body>
+        <input id="name" type="text">    
+        <button onclick="DisplayName()" id="submit-btn">Submit</button>
+        <p id="display1">
+        <script>
+            function DisplayName(){
+                var x = document.getElementById("name").value;
+                console.log(x);
+            }
+            document.onkeydown = ShowEnterKey;
+            function ShowEnterKey(){
+                var kc = event.keyCode;
+                if ( kc == 13){
+                    document.getElementById("submit-btn").click();
+                }
+                else if (kc == 27){
+                    document.getElementById("name").value ="" ;
+                }
+            }
+
+        </script>
+    </body>
+</html>

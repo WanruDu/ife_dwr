@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+            button{
+                position: relative;
+                left: 50%;
+                top:20px;
+            }
+            #display1{
+                background-image: url("http://ife.baidu.com/2016/static/img/erik_ce204002.jpg");
+                background-repeat: no-repeat;
+                background-position-x: 0px;
+                background-position-y: 0px;
+                /* background-position: 0px 480px -960px; *
+                /* background-position-y:480px; */
+                width:480px;
+                height:480px;
+                margin:0 auto;
+                /* border:1px solid black; */
+            }
+        </style>
+    </head>
+    <body>
+        <div id="display1"></div>
+        <button onclick="smile()">Begin Smile</button>
+    </body>
+    <script>
+        var c = 0;
+        var n = 0;
+        var temp = 1;
+        function smile(){
+            if (temp ==1 ){
+                c = c - 480;
+                n ++;
+                if (n == 16){
+                    temp = 0;
+                    n = 0
+                }
+            }
+            else{
+                c = c + 480;
+                n ++;
+                if (n == 16){
+                    temp = 1;
+                    n = 0;
+                } 
+            }
+            
+            document.getElementById("display1").style.backgroundPositionY =c+'px';
+                // alert("111");
+
+            var t = setTimeout("smile()", 80);
+        }
+    </script>
+
+</html>

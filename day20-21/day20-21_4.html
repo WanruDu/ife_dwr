@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+    </head>
+    
+    <body>
+        <div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+        <button id="fade-btn" onclick="danchu()">淡出</button>
+    
+    <script>
+        var c = 1;
+        var temp = 1;
+        var stamp = document.getElementById("fade-btn");
+
+        function danchu(){
+            document.getElementById("fade-obj").style.opacity = c;
+            // alert(c);
+            if(temp ==1){
+                c = c - 0.1;
+                stamp.disabled = true; 
+                if(c<0){
+                    document.getElementById("fade-btn").innerText="淡入";
+                    temp = 0; 
+                    stamp.disabled = false;
+                }
+                if(temp!=0){
+                    var t = setTimeout("danchu()", 100); 
+                }
+                
+            }
+            else if(temp == 0){
+                c = c + 0.1;
+                stamp.disabled = true;  
+                if(c>1){
+                    document.getElementById("fade-btn").innerText="淡出";
+                    temp = 1; 
+                    stamp.disabled = false; 
+                }
+                if(temp!=1){
+                    var t = setTimeout("danchu()", 100); 
+                }
+            }
+            
+            // while(temp==1){
+            //     c = c - 0.1;
+            //     document.getElementById("fade-obj").style.opacity = c;
+            //     stamp.disabled = true;
+            //     alert(c);
+            //     if (c < 0){
+            //         // alert("c"+"="+c);
+            //         stamp.disabled = false;
+            //         document.getElementById("fade-btn").innerText="淡入";
+            //         temp = 0;
+            //     }
+            //     if (temp != 0){
+            //         var t = setTimeout("danchu()", 1000);
+            //     }
+                
+            // }
+            
+            // while(temp==0){
+            //     c = c + 0.1;
+            //     document.getElementById("fade-obj").style.opacity = c;
+            //     stamp.disabled = true;
+
+            //     if(c >1 ){
+            //         stamp.disabled = false;
+            //         document.getElementById("fade-btn").innerText="淡出";
+            //         temp = 1;
+            //     }
+            //     if(temp != 1 ){
+            //         var t = setTimeout("danchu()", 1000);
+            //     }
+
+            // }
+        }
+    </script>
+    </body>
+</html>
